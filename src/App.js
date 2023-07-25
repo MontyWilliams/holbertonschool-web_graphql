@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import ApolloClient from 'apollo-boost';
+import TaskList from './components/TaskList';
+import AddTask from './components/AddTask';
+import AddProject from './components/AddProject';
 
+const client = new ApolloClient({
+  url: 'http://localhost:4000/graphql'
+})
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div id = "main">
+      <div id = "bg" >
+      </div>
+    <h1> Holberton school tasks </h1>
+    <TaskList />
+    <AddProject />
+    <AddTask />
+  </div>
   );
 }
 
